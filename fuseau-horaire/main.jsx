@@ -1,9 +1,26 @@
-import {  useEffect } from 'preact/hooks';
-import './style.scss';  // Assurez-vous d'importer le fichier SCSS ici
+import { useEffect } from 'preact/hooks';
+import './perso.css';  
 
 export function App() {
   useEffect(() => {
-    // Votre code JavaScript
+    // Your JavaScript code to update the date elements
+    const updateDateElements = () => {
+      const daysOfWeek = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+      const months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+
+      const now = new Date();
+      document.getElementById('weekday').innerText = daysOfWeek[now.getDay()];
+      document.getElementById('dayOfMonth').innerText = now.getDate();
+      document.getElementById('month').innerText = months[now.getMonth()];
+    };
+
+    // Call the function to set initial values
+    updateDateElements();
+    // Optionally, set an interval to update the values periodically
+    const intervalId = setInterval(updateDateElements, 60000); // update every minute
+
+    // Cleanup interval on unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
