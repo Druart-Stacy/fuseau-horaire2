@@ -3,18 +3,18 @@ Cette application affiche les heures actuelles pour plusieurs fuseaux horaires a
 
 ## Prérequis
 Node.js
-npm (ou yarn)
+npm 
 Installation
 Clonez le dépôt :
 
 ### bash
 Copier le code
-git clone <URL_DU_DEPOT>
+git clone git@github.com:Druart-Stacy/fuseau-horaire2.git
 Accédez au répertoire du projet :
 ## utilisation 
 ### bash
 Copier le code
-cd <NOM_DU_REPERTOIRE>
+cd fuseau-horaire2
 Installez les dépendances :
 
 ### bash
